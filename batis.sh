@@ -1,4 +1,4 @@
-#!/bin/bash
+x#!/bin/bash
 #SBATCH --err=%j.err
 #SBATCH --job-name=filter
 #SBATCH --nodes=1

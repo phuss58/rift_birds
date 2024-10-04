@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --err=%j.err
-#SBATCH --job-name=filter
+#SBATCH --err=cossypha%j.err
+#SBATCH --job-name=cossypha_structure
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --time=48:00:00
@@ -21,5 +21,5 @@ savedir=/common/cooperlab/phuss58/albertine/
 # define variables
 region_array=$( head -n${SLURM_ARRAY_TASK_ID} ${workdir}/scaffolds.txt | tail -n1 )
 
-vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep ${workdir}/chamaetylas.txt --max-missing 1.0 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --mac 2 --recode --recode-INFO-all --remove-indels --out ${savedir}/05_filtered_vcf/chamaetylas_structure_${region_array}_structure_nowindow
+vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep ${workdir}/cossypha.txt --max-missing 1.0 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --mac 2 --recode --recode-INFO-all --remove-indels --out ${savedir}/05_filtered_vcf/cossypha_structure_${region_array}_structure_nowindow
 
