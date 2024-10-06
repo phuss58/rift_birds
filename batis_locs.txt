@@ -3,5 +3,5 @@ FMNH355976_Bwindi
 FMNH385204_Bwindi
 FMNH443926_Kahuzi-Biega
 FMNH443928_Kahuzi-Biega
-Batis_diops__FMNH450545_
-Batis_diops__FMNH450547_
+FMNH450545_Kabogo
+FMNH450547_Kabogo
