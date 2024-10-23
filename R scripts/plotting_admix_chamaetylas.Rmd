@@ -1,5 +1,5 @@
 ---
-title: "Batis diops"
+title: "*Chamaetylas poliophrys*"
 author: "Peggy Huss & Jacob C. Cooper"
 date: "`r Sys.Date()`"
 output: pdf_document
