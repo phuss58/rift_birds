@@ -6,6 +6,7 @@ library(StAMPP)
 # format compatible with splitstree
 
 
+
 x_files <- list.files(pattern="*nothin.vcf")
 for(a in 1:length(x_files)) {
 	# read vcf
@@ -21,9 +22,21 @@ for(a in 1:length(x_files)) {
 	a_rep <- stamppNeisD(a_rep, pop = FALSE)
 	
 	# shorten names for phylip output
-	rownames(a_rep) <- paste0(substr(sapply(strsplit(rownames(a_rep), "_"), "[[", 1), 1, 1), "_",
-	substr(sapply(strsplit(rownames(a_rep), "_"), "[[", 2), 1, 1), "_",
-	substr(sapply(strsplit(rownames(a_rep), "__"), "[[", 2), 1, nchar(sapply(strsplit(rownames(a_rep), "__"), "[[", 2)) - 1))
+    rownames_file <- rownames(a_rep)
+    
+    for(j in 1:length(rownames_file)){
+        nr1 <- rownames_file[j]
+        nr2 <- strsplit(nr1,"__")[[1]][2]
+        nr3 <- gsub("FMNH","F",nr2)
+        nr4 <- gsub("_","",nr3)
+        rownames_file[j] <- nr4
+    }
+    
+	# rownames(a_rep) <- paste0(substr(sapply(strsplit(rownames(a_rep), "_"), "[[", 1), 1, 1), "_",mkdir
+	# substr(sapply(strsplit(rownames(a_rep), "_"), "[[", 2), 1, 1), "_",
+	# substr(sapply(strsplit(rownames(a_rep), "__"), "[[", 2), 1, nchar(sapply(strsplit(rownames(a_rep), "__"), "[[", 2)) - 1))
+    
+    rownames(a_rep) <- rownames_file
 	
 	# output name
 	outname <- paste0(strsplit(x_files[a], "\\.")[[1]][1], "_distmat.phy")
