@@ -1,0 +1,66 @@
+#Batis
+
+#to find number of sites
+#use nothin.vcf file
+#grep -v "#" batis_nothin.vcf|wc -l
+
+datapath = /common/cooperlab/phuss58/albertine/06_eems/batis_nothin.vcf
+mcmcpath = /common/cooperlab/phuss58/albertine/06_eems/batis_output
+nIndiv = 7
+nSites = 1285189
+nDemes = 200
+diploid = true
+numMCMCIter = 2000000
+numBurnIter = 1000000
+numThinIter = 9999
+
+
+#Cossypha
+
+#to find number of sites
+#use nothin.vcf file
+#grep -v "#" cossypha_nothin.vcf|wc -l
+
+datapath = /common/cooperlab/phuss58/albertine/06_eems/cossypha_nothin.vcf
+mcmcpath = /common/cooperlab/phuss58/albertine/06_eems/cossypha_output
+nIndiv = 7
+nSites = 1370904
+nDemes = 200
+diploid = true
+numMCMCIter = 2000000
+numBurnIter = 1000000
+numThinIter = 9999
+
+
+#Chamaetylas
+
+#to find number of sites
+#use nothin.vcf file
+#grep -v "#" chamaetylas_nothin.vcf|wc -l
+
+datapath = /common/cooperlab/phuss58/albertine/06_eems/chamaetylas_nothin.vcf
+mcmcpath = /common/cooperlab/phuss58/albertine/06_eems/chamaetylas_output
+nIndiv = 9
+nSites = 756667
+nDemes = 200
+diploid = true
+numMCMCIter = 2000000
+numBurnIter = 1000000
+numThinIter = 9999
+
+
+#Phylloscopus
+
+#to find number of sites
+#use nothin.vcf file
+#grep -v "#" phylloscopus_nothin.vcf|wc -l
+
+datapath = /common/cooperlab/phuss58/albertine/06_eems/phylloscopus_nothin.vcf
+mcmcpath = /common/cooperlab/phuss58/albertine/06_eems/phylloscopus_output
+nIndiv = 7
+nSites = 1293588
+nDemes = 200
+diploid = true
+numMCMCIter = 2000000
+numBurnIter = 1000000
+numThinIter = 9999
