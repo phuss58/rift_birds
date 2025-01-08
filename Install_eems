@@ -17,7 +17,7 @@ EIGEN_INC = /home/cooperlab/phuss58/.conda/envs/eems/include/eigen3
 BOOST_LIB = /home/cooperlab/phuss58/.conda/envs/eems/lib
 BOOST_INC = /home/cooperlab/phuss58/.conda/envs/eems/include
 
-module load gnu/4.5
+module load gnu/5.4.0
 
 make linux
 

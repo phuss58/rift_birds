@@ -40,9 +40,9 @@ region[grep("FMNH385038", pca$ind)] <- "East"
 region[grep("FMNH443853", pca$ind)] <- "West"
 region[grep("FMNH443854", pca$ind)] <- "West"
 region[grep("FMNH443856", pca$ind)] <- "West"
-region[grep("FMNH450510", pca$ind)] <- "West"
-region[grep("FMNH450511", pca$ind)] <- "West"
-region[grep("FMNH450512", pca$ind)] <- "West"
+region[grep("FMNH450510", pca$ind)] <- "Kabogo"
+region[grep("FMNH450511", pca$ind)] <- "Kabogo"
+region[grep("FMNH450512", pca$ind)] <- "Kabogo"
 
 # location
 loc <- rep(NA, length(pca$ind))
@@ -139,6 +139,17 @@ read_delim("~/Documents/06_plink/chamaetylas_nothin_plink.5.Q",col_names = paste
            delim = " ")
 ```
 
+```{r}
+samplelist$sample <- gsub("Chamaetylas_poliophrys__","",samplelist$sample)
+```
+
+```{r}
+locations_admix <- c("Kibira-Nyungwe","Rwenzori","Bwindi","Kahuzi-Biega","Kahuzi-Biega","Kahuzi-Biega","Kabogo","Kabogo","Kabogo")
+
+samplelist$sample <- paste0(samplelist$sample,locations_admix)
+```
+
+
 ```{r, eval=F}
 cv <- c(1.24030, 2.46934, 2.49640,
         2.78206, 0.92918, 0.35207)
@@ -171,6 +182,8 @@ for (k in c(2:5)){
 }
 ```
 ```{r}
+all_data$sample <- gsub("Chamaetylas","C",all_data$sample)
+
 all_data %>%
   filter(k == 2) %>%
   ggplot(.,aes(x=sample,y=value,fill=factor(Q))) + 
@@ -191,7 +204,7 @@ all_data %>%
   xlab("Sample") + ylab("Ancestry") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
-  scale_fill_brewer(palette="Set1",name="K",
+  scale_fill_manual(values = c("#d95f02", "#1b9e77", "#7570b3"),name="K",
                     labels=c("1","2", "3"))
 ```
 
